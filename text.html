@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1">
+    <style>
+        div {
+            width: 400px;
+            height: 130px;
+            border: 2px solid black;
+            padding: 15px;
+            position: absolute;
+            left: 27%;
+        }
+    </style>
+</head>
+  
+<body>
+    <div>
+        Enter only numbers with a Decimal value: 
+        <input type='text' id='tbNumbers' value=''
+            onkeypress='javascript: return isNumber(event)'
+            autocomplete='off' />
+    </div>
+</body>
+
+<script>
+    // Write the validation script.
+    function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        alert("Only numbers are allowed");
+        return false;
+    }
+    return true;
+}
+   
+</script>
+</html>
